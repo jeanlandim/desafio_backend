@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method="get">
+<br>
+<form method="get" align="center">
   {{busca.form.as_p}}
   <button type="submit">
     Pesquisar
   </button>
-  </form>
+ </form>
+ <h1 align="center"> Resultados: </h1>
+ <hr>
       {% for resultado in busca.qs %}
       <h1>{{resultado.titulo}}</h1>
       <p>{{resultado.texto}}</p>

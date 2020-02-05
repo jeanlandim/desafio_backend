@@ -13,10 +13,8 @@ class ApiList(generics.ListCreateAPIView):
 class ApiListItems(generics.RetrieveUpdateDestroyAPIView):
     queryset = Api.objects.all()
     serializer_class = ApiSerializer
-
 def busca(request):
     lista_de_textos = Api.objects.all()
     filtro_dos_textos = ApiFilter(request.GET, queryset=lista_de_textos)
-
     return render(request, 'index.html', {'busca': filtro_dos_textos})
 

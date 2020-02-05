@@ -28,12 +28,18 @@ $ mkvirtualenv desafio_backend
 $ pip install -r requirements.txt
 $ python manage.py makemigrations && python manage.py migrate && python manage.py runserver
 ```
-Abra o navegador em http://localhost:8000 para busca de texto ou titulo, e utilize o endereço http://localhost:8000/api-textos/ para inserção, atualização e remoção dos itens da API
+Abra o navegador em http://localhost:8000 para busca de texto ou titulo, e utilize o endereço http://localhost:8000/api-textos/ para inserção, atualização e remoção dos itens da API.
 
 Para testes na API:
 
 ```
+$ curl http://localhost:8000/api-textos/ -d "titulo=Turivius&texto=Sua nova forma de fazer pesquisa juíridca"
+$ curl http://localhost:800/api-textos/?=Turivius
+$ curl http://localhost:8000/api-textos/?=Sua
+
+Ou da maneira mais rápida:
+
 $ python3 manage.py test
 ```
+Para quaisquer dúvidas, favor contato pelo email jewanbb@gmail.com ou pelo @jeanlandim no telegram.
 
-Aguardo retorno, abraço!
